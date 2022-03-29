@@ -1,4 +1,4 @@
-# Containerized Java Development with Spring Boot & Jib on GKE
+# Containerized Java Development with Spring Boot & Testcontainers on GKE
 
 In previous labs you were introduced to different build types. Now, let's dive into the Inner Loop Application Development process of a Spring Boot application in Google Cloud.
 
