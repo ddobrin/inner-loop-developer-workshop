@@ -1,6 +1,6 @@
-# Inner Loop Containerized App Dev with Spring Boot and Testcontainers on Google Cloud
+# Inner Loop App Dev with Spring Boot and Testcontainers on Google Cloud
 
-In previous labs you were introduced to different build types. Now, let's dive into the Inner Loop Application Development process of a Spring Boot application in Google Cloud.
+The workshop dives into the Inner Loop App Dev process of a Spring Boot Java application in Google Cloud.
 
 ## Key Points 
 In this workshop you will learn how to:
