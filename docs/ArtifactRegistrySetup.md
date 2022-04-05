@@ -3,10 +3,10 @@
 A repository can be created easily from the gcloud CLI:
 ```shell
 # generic
-# gcloud artifacts repositories create modern-java-container --repository-format=docker --location=<region> --description="Docker repository for multi-layer lab images"
+# gcloud artifacts repositories create <repo-name> --repository-format=docker --location=<region> --description="Docker repository for multi-layer lab images"
 
 # ex
-gcloud artifacts repositories create modern-java-container \ 
+gcloud artifacts repositories create demo-app \ 
     --repository-format=docker \ 
     --location=us-central1 \ 
     --description="Docker repository for multi-layer images"

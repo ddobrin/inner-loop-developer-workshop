@@ -1,8 +1,12 @@
 # GKE Dev Cluster for lab
 
 ```shell
+# set the project ID
 export PROJECT_ID="{PROJECT_ID}"
-# ex.: export PROJECT_ID="dan-workshop-project-332213"
+
+# or you can use directly gcloud commands
+export PROJECT_ID=$(gcloud config get-value project)
+export PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format='value(projectNumber)')
 
 # Dev cluster
 echo "creating devcluster..."
