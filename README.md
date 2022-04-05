@@ -152,10 +152,10 @@ This will be the base of the app going forward.
 
 In your IDE, click F1 and execute `Cloud Code: Run on Kubernetes` or click the Cloud Code extension link and select the same option
 * Choose context - point to the GKE cluster called `lab-cluster`
-* Choose Container Registry - select Brows Artifact Registry - select the `demo-app` folder
+* Choose Artifact Registry - select Browse Artifact Registry - select the `demo-app` folder
 * Within the Artifact Registry demo-app folder, use the default `.` as the image location
 
-Skaffold will start to build the app and deploy it to K8s. In the `Cloud Code - Kubernetes` view, observe the `Status`, Build Containers`, `Deploy to Cluster` and `Portforward URLs` steps.
+Skaffold will start to build the app and deploy it to K8s. In the `Output` tab, select the `Cloud Code - Kubernetes` view, observe the `Status`, Build Containers`, `Deploy to Cluster` and `Portforward URLs` steps.
 
 Click on `Portforwarded URLS` as the deployment is successul and observe the output:
 ```
@@ -177,6 +177,7 @@ http :8080
 You have now a running web application deployed and running in your GKE cluster and are good to go for building out the CRUD application for the workshop !!!
 
 Stop the session using `SHIFT + F5` or select `Stop Debugging` from the menu or click the `Stop` button the Cloud Code - Kubernetes view.
+Select the option to `Clean up after each run` to remove deployed artifacts.
 
 ## Build a simple CRUD REST service with a local Postgres backend
 
@@ -193,7 +194,7 @@ We'll develop a `Quote` service, which would allow us to work with quotes collec
 
 The code for the Quote service will be developed in the `com.example` package.
 
-Start by creating an Entity class:  Quote
+Start by creating an file for the Entity class:  Quote.java
 ```java
 package com.example;
 
@@ -263,6 +264,8 @@ public class Quote
 ```
 
 The intent is to use JPA for persisting the data, therefore the need to create a repository class `QuoteRepository`, which extends the Spring `JPARepository` interface and allows the creation of custom code. This class will create a `findRandomQuote` custom method.
+
+Create the `QuoteRepository.java` file in the same package.QuoteRepository.java
 ```java
 package com.example;
 
@@ -277,7 +280,9 @@ public interface QuoteRepository extends JpaRepository<Quote,Integer> {
 }
 ```
 
-To expose the endpoint for the service, a `QuoteController` class will provide this functionality
+To expose the endpoint for the service, a `QuoteController` class will provide the functionality.
+
+Create the `QuoteController.java` file in the same package:
 ```java
 package com.example;
 
@@ -420,7 +425,7 @@ The DB_HOST, DB_DATABASE, DB_USER and DB_PASS parameters will be set via externa
 Before the app can be compiled, the Maven POM file must be updated with the Spring JPA, Postgres, Flyway and H2 dependencies.
 
 ```xml
-    <!--  Database sependencies-->
+    <!--  Database dependencies-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
